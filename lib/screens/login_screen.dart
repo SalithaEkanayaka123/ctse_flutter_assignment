@@ -55,25 +55,32 @@ class _LoginScreen extends State<LoginScreen> {
   Widget build(BuildContext context) {
 
     void loginUserMethod(String email, String pwd) {
+      bool pattern = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(email);
+      if(pattern){
+        Provider.of<UserAuthentication>(context, listen: false).logInUser(emailadd!, pwd!);
+        Stream<User?> val = Provider.of<UserAuthentication>(context, listen: false).authStateChanges;
+        val.listen((event) {
+          print('event email $event.email');
+          if(event != null){
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => App()),
+            );
+          }else{
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => RegisterScreen()),
+            );
+          }
+        });
+      } else {
+        print('fail');
+      }
 
-      Provider.of<UserAuthentication>(context, listen: false).logInUser(emailadd!, pwd!);
-      Stream<User?> val = Provider.of<UserAuthentication>(context, listen: false).authStateChanges;
-      val.listen((event) {
-        print('event email $event.email');
-        if(event != null){
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => App()),
-          );
-        }else{
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => RegisterScreen()),
-          );
-        }
-      });
+
+
     }
 
     return Scaffold(
@@ -147,6 +154,9 @@ class _LoginScreen extends State<LoginScreen> {
                 child: SizedBox(
                   child: TextField(
                     onChanged: (val) => setState(() => password = val),
+                    obscureText: true,
+                    enableSuggestions: false,
+                    autocorrect: false,
                     decoration: InputDecoration(
                       labelText: "Enter Password",
                       filled: true,

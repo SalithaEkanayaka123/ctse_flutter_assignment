@@ -89,15 +89,20 @@ class _SelectableMovieState extends State<SelectableMovie> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            widget.selectedMovieModel.title, // Change to name.
-                            style: TextStyle(fontWeight: FontWeight.w600),
-                          ),
-                          Text(widget.selectedMovieModel.year.toString()),
-                        ],
+                      Container(
+                        width: 200,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              widget.selectedMovieModel.title, // Change to name.
+                              style: TextStyle(fontWeight: FontWeight.w600),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            Text(widget.selectedMovieModel.year.toString(),
+                              overflow: TextOverflow.ellipsis,),
+                          ],
+                        ),
                       ),
                       widget.selectedMovieModel.isSelected
                           ? Icon(

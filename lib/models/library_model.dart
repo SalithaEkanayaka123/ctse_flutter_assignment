@@ -3,6 +3,7 @@ class Library {
   String name;
   String optional;
   String color;
+  String userId;
 
 
   Library({
@@ -10,6 +11,7 @@ class Library {
     required this.name,
     required this.optional,
     required this.color,
+    required this.userId
   });
 
   Library.fromMap(Map<String, dynamic> snapshot, String id)
@@ -17,7 +19,8 @@ class Library {
         id = id ?? '',
         name = snapshot['name'] ?? '',
         optional = snapshot['optional'] ?? '',
-        color = snapshot['color'] ?? '';
+        color = snapshot['color'] ?? '',
+        userId = snapshot['userId']?? '';
 
 
   toJson() {
@@ -25,6 +28,7 @@ class Library {
       "name": name,
       "optional": optional,
       "color": color,
+      "userId": userId,
     };
   }
 }

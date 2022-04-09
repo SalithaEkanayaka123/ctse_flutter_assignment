@@ -81,6 +81,17 @@ class CrudModel extends ChangeNotifier {
             event.docs.map((e) => Library.fromMap(e.data(), e.id)).toList());
   }
 
+  // Updated CRUM method, get list of libraries according to user id.
+  Stream<List<Library>> getMoviesFromLibraryUserId(String id) {
+    return FirebaseFirestore.instance
+        .collection("libraries")
+        .where("userId", isEqualTo: id)
+        .snapshots()
+        .map((event) => event.docs
+        .map((e) => Library.fromMap(e.data(), e.id))
+        .toList());
+  }
+
   // Get Movies from a particular library.
   Stream<List<SelectedMovieModel>> getMoviesFromLibrary(String id) {
     return FirebaseFirestore.instance

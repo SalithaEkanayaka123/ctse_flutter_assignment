@@ -182,6 +182,9 @@ class _RegisterScreen  extends State<RegisterScreen>{
                                   //   fillColor: Color(0xffffffff),
                                   //   border:  InputBorder.none,
                                   // ),
+                                  obscureText: true,
+                                  enableSuggestions: false,
+                                  autocorrect: false,
                                   decoration: InputDecoration(
                                     labelText: "Enter Password",
                                     filled: true,

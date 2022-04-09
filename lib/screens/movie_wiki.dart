@@ -51,7 +51,7 @@ class _MovieWikiState extends State<MovieWiki> {
 
   Widget build(BuildContext context) {
     // Hard Attributes.
-    //loginValidation();
+    // loginValidation();
     String warningImage =
         "https://www.pngall.com/wp-content/uploads/8/Warning-PNG-Picture.png";
     // Provider Movies - Changed to the Appropriate movie list.

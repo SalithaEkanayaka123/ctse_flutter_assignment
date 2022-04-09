@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -5,16 +6,35 @@ import '../components/movie/validation_pop.dart';
 import '../models/library_model.dart';
 import '../styles.dart';
 import '../util/crud_model.dart';
+import '../util/userAuth/userauthentication.dart';
 import 'movie_library_form.dart';
 import 'movie_library_home.dart';
 
-class LibraryList extends StatelessWidget {
+class LibraryList extends StatefulWidget {
   const LibraryList({Key? key}) : super(key: key);
 
   @override
+  State<LibraryList> createState() => _LibraryListState();
+}
+
+class _LibraryListState extends State<LibraryList> {
+  String? userId = "";
+
+  storeSession() {
+    Stream<User?> val = Provider.of<UserAuthentication>(context, listen: false)
+        .authStateChanges;
+    val.listen((event) => {
+      setState(() {
+        userId = event!.uid.toString();
+      }), //Get the User Id.
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    storeSession();
     Stream<List<Library>> libraries =
-        Provider.of<CrudModel>(context, listen: false).getListOfLibraries;
+        Provider.of<CrudModel>(context, listen: false).getMoviesFromLibraryUserId(userId.toString());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.teal,

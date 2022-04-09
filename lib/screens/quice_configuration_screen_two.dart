@@ -326,14 +326,14 @@ class _DropDownNewState extends State<DropDownNew> {
                                                             questions =
                                                             2;
                                                             questionRadioValue = 0;
-                                                            title2 = _list2.elementAt(index);
+                                                            widget.questions = int.parse(_list2.elementAt(index));
                                                           });
                                                         } else if (val == 1) {
                                                           setState(() {
                                                             questions =
                                                             3;
                                                             questionRadioValue = 1;
-                                                            title2 = _list2.elementAt(index);
+                                                            widget.questions = int.parse(_list2.elementAt(index));
                                                           });
                                                         }
                                                         else if (val == 2) {
@@ -341,7 +341,7 @@ class _DropDownNewState extends State<DropDownNew> {
                                                             questions =
                                                             5;
                                                             questionRadioValue = 2;
-                                                            title2 = _list2.elementAt(index);
+                                                            widget.questions = int.parse(_list2.elementAt(index));
                                                           });
                                                         }
                                                         else if (val == 3) {
@@ -349,7 +349,7 @@ class _DropDownNewState extends State<DropDownNew> {
                                                             questions =
                                                             7;
                                                             questionRadioValue = 3;
-                                                            title2 = _list2.elementAt(index);
+                                                            widget.questions = int.parse(_list2.elementAt(index));
                                                           });
                                                         }
                                                         else if (val == 4) {
@@ -357,7 +357,7 @@ class _DropDownNewState extends State<DropDownNew> {
                                                             questions =
                                                             10;
                                                             questionRadioValue = 0;
-                                                            title2 = _list2.elementAt(index);
+                                                            widget.questions = int.parse(_list2.elementAt(index));
                                                           });
                                                         }
                                                       }
@@ -456,14 +456,14 @@ class _DropDownNewState extends State<DropDownNew> {
                                                             time =
                                                             10;
                                                             timeRadioValue = 0;
-                                                            title3 = _list3.elementAt(index);
+                                                            widget.time = int.parse(_list3.elementAt(index));
                                                           });
                                                         } else if (val == 1) {
                                                           setState(() {
                                                             time =
                                                             15;
                                                             timeRadioValue = 1;
-                                                            title3 = _list3.elementAt(index);
+                                                            widget.time = int.parse(_list3.elementAt(index));
                                                           });
                                                         }
                                                         else if (val == 2) {
@@ -471,7 +471,7 @@ class _DropDownNewState extends State<DropDownNew> {
                                                             time =
                                                             20;
                                                             timeRadioValue = 2;
-                                                            title3 = _list3.elementAt(index);
+                                                            widget.time = int.parse(_list3.elementAt(index));
                                                           });
                                                         }
                                                         else if (val == 3) {
@@ -479,7 +479,7 @@ class _DropDownNewState extends State<DropDownNew> {
                                                             time =
                                                             30;
                                                             timeRadioValue = 3;
-                                                            title3 = _list3.elementAt(index);
+                                                            widget.time = int.parse(_list3.elementAt(index));
                                                           });
                                                         }
                                                       }

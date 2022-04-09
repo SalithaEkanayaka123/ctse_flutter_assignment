@@ -98,6 +98,7 @@ class _LeaderBoardState extends State<LeaderBoard> {
               ),
             ],
           ),
-        ));
+        )
+        );
   }
 }

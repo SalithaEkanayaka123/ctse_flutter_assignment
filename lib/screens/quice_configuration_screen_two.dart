@@ -23,8 +23,8 @@ class DropDownNew extends StatefulWidget {
   @override
   _DropDownNewState createState() => _DropDownNewState();
 }
-  List <String> _list =['Action',"Romance","Thriller",'Animation', "Comedy"];
-  List <String> _list2 =['5',"10","15",'20'];
+  List <String> _list =['Action',"Romance","Thriller",'Animation', "Comedy", "Horror"];
+  List <String> _list2 =['2',"3","5",'7', '10'];
   List <String> _list3 =['10',"15","20", "30"];
 
 class _DropDownNewState extends State<DropDownNew> {
@@ -181,35 +181,43 @@ class _DropDownNewState extends State<DropDownNew> {
                                                         onChanged: (val) {
                                                           if (val == 0) {
                                                             setState(() {
-                                                              widget.category =
+                                                              category =
                                                               'Action';
                                                               title = _list.elementAt(index);
                                                             });
                                                           } else if (val == 1) {
                                                             setState(() {
-                                                              widget.category =
+                                                              category =
                                                               'Romance';
                                                               title = _list.elementAt(index);
                                                             });
                                                           }
                                                           else if (val == 2) {
                                                             setState(() {
-                                                              widget.category =
+                                                              category =
                                                               'Thriller';
                                                               title = _list.elementAt(index);
                                                             });
                                                           }
                                                           else if (val == 3) {
                                                             setState(() {
-                                                              widget.category =
+                                                              category =
                                                               'Animation';
                                                               title = _list.elementAt(index);
                                                             });
                                                           }
                                                           else if (val == 4) {
+
                                                             setState(() {
-                                                              widget.category =
+                                                              category =
                                                               'Comedy';
+                                                              title = _list.elementAt(index);
+                                                            });
+                                                          }
+                                                          else if (val == 5) {
+                                                            setState(() {
+                                                              category =
+                                                              'Horror';
                                                               title = _list.elementAt(index);
                                                             });
                                                           }
@@ -307,28 +315,35 @@ class _DropDownNewState extends State<DropDownNew> {
                                                       onChanged: (val) {
                                                         if (val == 0) {
                                                           setState(() {
-                                                            widget.questions =
-                                                            5;
+                                                            questions =
+                                                            2;
                                                             title2 = _list2.elementAt(index);
                                                           });
                                                         } else if (val == 1) {
                                                           setState(() {
-                                                            widget.questions =
-                                                            10;
+                                                            questions =
+                                                            3;
                                                             title2 = _list2.elementAt(index);
                                                           });
                                                         }
                                                         else if (val == 2) {
                                                           setState(() {
-                                                            widget.questions =
-                                                            15;
+                                                            questions =
+                                                            5;
                                                             title2 = _list2.elementAt(index);
                                                           });
                                                         }
                                                         else if (val == 3) {
                                                           setState(() {
-                                                            widget.questions =
-                                                            20;
+                                                            questions =
+                                                            7;
+                                                            title2 = _list2.elementAt(index);
+                                                          });
+                                                        }
+                                                        else if (val == 4) {
+                                                          setState(() {
+                                                            questions =
+                                                            10;
                                                             title2 = _list2.elementAt(index);
                                                           });
                                                         }
@@ -425,27 +440,27 @@ class _DropDownNewState extends State<DropDownNew> {
                                                       onChanged: (val) {
                                                         if (val == 0) {
                                                           setState(() {
-                                                            widget.time =
+                                                            time =
                                                             10;
                                                             title3 = _list3.elementAt(index);
                                                           });
                                                         } else if (val == 1) {
                                                           setState(() {
-                                                            widget.time =
+                                                            time =
                                                             15;
                                                             title3 = _list3.elementAt(index);
                                                           });
                                                         }
                                                         else if (val == 2) {
                                                           setState(() {
-                                                            widget.time =
+                                                            time =
                                                             20;
                                                             title3 = _list3.elementAt(index);
                                                           });
                                                         }
                                                         else if (val == 3) {
                                                           setState(() {
-                                                            widget.time =
+                                                            time =
                                                             30;
                                                             title3 = _list3.elementAt(index);
                                                           });

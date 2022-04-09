@@ -350,7 +350,7 @@ class _DropDownState extends State<DropDown> {
                                                           setState(() {
                                                             questions =
                                                             10;
-                                                            questionRadioValue = 0;
+                                                            questionRadioValue = 4;
                                                             title2 = _list2.elementAt(index);
                                                           });
                                                         }

@@ -356,7 +356,7 @@ class _DropDownNewState extends State<DropDownNew> {
                                                           setState(() {
                                                             questions =
                                                             10;
-                                                            questionRadioValue = 0;
+                                                            questionRadioValue = 4;
                                                             widget.questions = int.parse(_list2.elementAt(index));
                                                           });
                                                         }
